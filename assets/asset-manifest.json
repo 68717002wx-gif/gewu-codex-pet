@@ -1,0 +1,42 @@
+{
+  "project": "gewu-codex-pet",
+  "character": "格物页",
+  "legacy-disabled_policy": "Runtime desktop pet visuals must use the user-provided reference image or direct crops only. Generated character sheets are archived and not used as the pet body.",
+  "assets": [
+    {
+      "id": "reference",
+      "path": "assets/reference/reference.png",
+      "type": "user_reference",
+      "status": "provided",
+      "runtime_allowed": true
+    },
+    {
+      "id": "legacy-disabled-manifest",
+      "path": "assets/legacy-disabled/legacy-disabled-manifest.json",
+      "type": "direct_reference_crop_manifest",
+      "status": "derived_from_user_reference",
+      "runtime_allowed": true
+    },
+    {
+      "id": "character-sheet-archived",
+      "path": "assets/generated/gewuye-character-sheet.png",
+      "type": "generated_archive",
+      "status": "archived_not_runtime",
+      "runtime_allowed": false
+    },
+    {
+      "id": "basic-actions-archived",
+      "path": "assets/frames/gewuye-basic-actions.png",
+      "type": "generated_archive",
+      "status": "archived_not_runtime",
+      "runtime_allowed": false
+    },
+    {
+      "id": "emotions-archived",
+      "path": "assets/frames/gewuye-emotions.png",
+      "type": "generated_archive",
+      "status": "archived_not_runtime",
+      "runtime_allowed": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>格物页桌面宠物 Electron 重启校验</title>
+  <style>
+    :root{--green:#143f32;--cream:#f6efe1;--muted:#6f7f77;--line:#d8cdb8;--ok:#2e7d59;}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#f6efe1,#edf5ef);color:var(--green)}
+    main{max-width:960px;margin:0 auto;padding:48px 28px}.card{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:0 18px 48px rgba(20,63,50,.12)}
+    h1{margin:0 0 12px;font-size:34px;letter-spacing:-.03em}.lead{margin:0 0 28px;color:var(--muted);font-size:17px;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.item{border:1px solid rgba(20,63,50,.15);border-radius:18px;padding:18px;background:#fffdf8}.item b{display:block;margin-bottom:8px}.ok{color:var(--ok);font-weight:700}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:#143f32;color:#f6efe1;border-radius:14px;padding:14px;overflow:auto}ul{line-height:1.8}@media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>格物页桌面宠物 Electron 重启校验</h1>
+      <p class="lead">本页记录本轮“校验并重启 Demo”的可验证结果。未重建 deck，未使用 <code>--force</code>，未改写既有 <code>demo/index.html</code>。</p>
+      <div class="grid">
+        <div class="item"><b>Outline QA</b><span class="ok">通过</span><br/>output/qa/outline_check.json：ok=true，issues=[]，warnings=[]，slideCount=3。</div>
+        <div class="item"><b>Electron 启动</b><span class="ok">已启动</span><br/>后台进程 ID：87bf6f0d；启动命令输出正常。</div>
+        <div class="item"><b>外形修复目标</b>桌宠以 <code>assets/reference/reference.png</code> 为唯一原型，避免 CSS/生成图重画造成外形偏差。</div>
+        <div class="item"><b>拖动修复目标</b>Electron 改为全屏透明桌面层，透明区域尽量点击穿透，宠物本体可在桌面范围拖动。</div>
+      </div>
+      <p class="mono">npm start → electron .</p>
+      <h2>请人工确认</h2>
+      <ul>
+        <li>宠物外形是否已严格回到用户参考图原型。</li>
+        <li>宠物是否可以在桌面任意位置拖动，而不是被小窗口限制。</li>
+        <li>透明区域是否没有明显阻挡桌面正常点击。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

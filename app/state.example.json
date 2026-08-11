@@ -1,0 +1,18 @@
+{
+  "position": {
+    "x": null,
+    "y": null,
+    "dock": "right-bottom"
+  },
+  "scale": 1,
+  "mood": "idle",
+  "visible": true,
+  "alwaysOnTop": true,
+  "timedTalk": true,
+  "persona": {
+    "name": "格物页",
+    "traits": ["话痨", "调皮", "鼓励型", "专业"],
+    "workModeLine": "我在这儿，慢慢来。"
+  },
+  "codexCliStatus": "reserved"
+}

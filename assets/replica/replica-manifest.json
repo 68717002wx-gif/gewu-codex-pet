@@ -1,0 +1,128 @@
+{
+  "source": "assets/reference/reference.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "rule": "All runtime character visuals are direct crops from the user supplied reference image. No generated/redrawn character shape is used.",
+  "assets": [
+    {
+      "id": "sheet-full",
+      "path": "assets/legacy-disabled/sheet-full.png",
+      "source_box": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "view-left",
+      "path": "assets/legacy-disabled/view-left.png",
+      "source_box": [
+        0,
+        0,
+        512,
+        1024
+      ],
+      "size": [
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "view-center",
+      "path": "assets/legacy-disabled/view-center.png",
+      "source_box": [
+        512,
+        0,
+        1024,
+        1024
+      ],
+      "size": [
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "view-right",
+      "path": "assets/legacy-disabled/view-right.png",
+      "source_box": [
+        1024,
+        0,
+        1536,
+        1024
+      ],
+      "size": [
+        512,
+        1024
+      ]
+    },
+    {
+      "id": "top-left-detail",
+      "path": "assets/legacy-disabled/top-left-detail.png",
+      "source_box": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "size": [
+        768,
+        512
+      ]
+    },
+    {
+      "id": "top-right-detail",
+      "path": "assets/legacy-disabled/top-right-detail.png",
+      "source_box": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "size": [
+        768,
+        512
+      ]
+    },
+    {
+      "id": "bottom-left-detail",
+      "path": "assets/legacy-disabled/bottom-left-detail.png",
+      "source_box": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "size": [
+        768,
+        512
+      ]
+    },
+    {
+      "id": "bottom-right-detail",
+      "path": "assets/legacy-disabled/bottom-right-detail.png",
+      "source_box": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "size": [
+        768,
+        512
+      ]
+    }
+  ],
+  "default_asset": "sheet-full",
+  "notes": [
+    "Use full sheet for strict visual reference mode.",
+    "Use crop assets only for switching among existing reference-sheet regions; do not invent missing angles or expressions.",
+    "Preserve original proportions, colors, outlines, labels and dimensions visible in the reference."
+  ]
+}

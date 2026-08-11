@@ -1,0 +1,251 @@
+{
+  "source": "assets/reference/reference.png",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "extraction": "manual coordinate crop from large prototype; edge-flood background removal with transparent padding; final Demo uses standalone sprite frame only",
+  "default": "front-main",
+  "frames": [
+    {
+      "id": "front-main",
+      "name": "正面完整主形象",
+      "state": "default",
+      "source_box": [
+        110,
+        60,
+        470,
+        460
+      ],
+      "path": "assets/sprites/front-main.png",
+      "size": [
+        384,
+        424
+      ]
+    },
+    {
+      "id": "side-main",
+      "name": "侧面完整主形象",
+      "state": "side",
+      "source_box": [
+        570,
+        60,
+        830,
+        460
+      ],
+      "path": "assets/sprites/side-main.png",
+      "size": [
+        284,
+        424
+      ]
+    },
+    {
+      "id": "back-main",
+      "name": "背面完整主形象",
+      "state": "back",
+      "source_box": [
+        900,
+        60,
+        1260,
+        460
+      ],
+      "path": "assets/sprites/back-main.png",
+      "size": [
+        384,
+        424
+      ]
+    },
+    {
+      "id": "front-45-left",
+      "name": "45度左前视角",
+      "state": "idle",
+      "source_box": [
+        30,
+        550,
+        240,
+        785
+      ],
+      "path": "assets/sprites/front-45-left.png",
+      "size": [
+        234,
+        259
+      ]
+    },
+    {
+      "id": "front-45-right",
+      "name": "45度右前视角",
+      "state": "idle_alt",
+      "source_box": [
+        225,
+        548,
+        435,
+        785
+      ],
+      "path": "assets/sprites/front-45-right.png",
+      "size": [
+        234,
+        261
+      ]
+    },
+    {
+      "id": "back-45-left",
+      "name": "45度左后视角",
+      "state": "back_idle",
+      "source_box": [
+        515,
+        552,
+        735,
+        790
+      ],
+      "path": "assets/sprites/back-45-left.png",
+      "size": [
+        244,
+        262
+      ]
+    },
+    {
+      "id": "back-45-right",
+      "name": "45度右后视角",
+      "state": "back_alt",
+      "source_box": [
+        760,
+        552,
+        975,
+        790
+      ],
+      "path": "assets/sprites/back-45-right.png",
+      "size": [
+        239,
+        262
+      ]
+    },
+    {
+      "id": "top-view",
+      "name": "俯视角",
+      "state": "top",
+      "source_box": [
+        980,
+        595,
+        1220,
+        775
+      ],
+      "path": "assets/sprites/top-view.png",
+      "size": [
+        264,
+        204
+      ]
+    },
+    {
+      "id": "bottom-view",
+      "name": "底视角",
+      "state": "bottom",
+      "source_box": [
+        1255,
+        590,
+        1510,
+        775
+      ],
+      "path": "assets/sprites/bottom-view.png",
+      "size": [
+        279,
+        209
+      ]
+    },
+    {
+      "id": "expr-smile",
+      "name": "表情-微笑",
+      "state": "emotion",
+      "source_box": [
+        25,
+        855,
+        190,
+        995
+      ],
+      "path": "assets/sprites/expr-smile.png",
+      "size": [
+        189,
+        164
+      ]
+    },
+    {
+      "id": "expr-happy",
+      "name": "表情-开心",
+      "state": "emotion",
+      "source_box": [
+        190,
+        855,
+        385,
+        995
+      ],
+      "path": "assets/sprites/expr-happy.png",
+      "size": [
+        219,
+        164
+      ]
+    },
+    {
+      "id": "expr-focus",
+      "name": "表情-专注",
+      "state": "emotion",
+      "source_box": [
+        380,
+        855,
+        580,
+        995
+      ],
+      "path": "assets/sprites/expr-focus.png",
+      "size": [
+        224,
+        164
+      ]
+    },
+    {
+      "id": "expr-surprised",
+      "name": "表情-惊讶",
+      "state": "emotion",
+      "source_box": [
+        575,
+        855,
+        775,
+        995
+      ],
+      "path": "assets/sprites/expr-surprised.png",
+      "size": [
+        224,
+        164
+      ]
+    },
+    {
+      "id": "expr-thinking",
+      "name": "表情-思考",
+      "state": "emotion",
+      "source_box": [
+        765,
+        855,
+        960,
+        995
+      ],
+      "path": "assets/sprites/expr-thinking.png",
+      "size": [
+        219,
+        164
+      ]
+    },
+    {
+      "id": "expr-cheer",
+      "name": "表情-欢呼",
+      "state": "emotion",
+      "source_box": [
+        955,
+        855,
+        1145,
+        995
+      ],
+      "path": "assets/sprites/expr-cheer.png",
+      "size": [
+        214,
+        164
+      ]
+    }
+  ]
+}
