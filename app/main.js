@@ -2,13 +2,17 @@ const { app, BrowserWindow, Menu, Tray, ipcMain, screen, nativeImage } = require
 const path = require('path');
 const fs = require('fs');
 const { clampWindowMove } = require('./window-position');
+const { readStatus } = require('./codex-status');
 
 const ROOT = path.resolve(__dirname, '..');
 const DEMO_HTML = path.join(ROOT, 'demo', 'index.html');
 const STATE_FILE = path.join(app.getPath('userData'), 'gewuye-state.json');
+const CODEX_STATUS_FILE = path.resolve(process.env.GEWU_PET_STATUS_FILE || path.join(__dirname, 'runtime', 'codex-status.json'));
 
 let win = null;
 let tray = null;
+let statusWatcher = null;
+let statusReloadTimer = null;
 
 const DEFAULT_STATE = {
   position: { x: null, y: null, dock: 'right-bottom' },
@@ -35,6 +39,35 @@ function writeState(patch) {
   if (patch && patch.position) next.position = { ...readState().position, ...patch.position };
   fs.writeFileSync(STATE_FILE, JSON.stringify(next, null, 2), 'utf8');
   return next;
+}
+
+function publishCodexStatus() {
+  if (!win || win.isDestroyed()) return;
+  try {
+    const status = readStatus(CODEX_STATUS_FILE);
+    if (status) win.webContents.send('codex:status', status);
+  } catch (error) {
+    win.webContents.send('codex:status', {
+      version: 1,
+      type: 'codex-status',
+      state: 'error',
+      message: `状态文件读取失败：${error.message}`,
+      source: 'desktop',
+      taskId: null,
+      progress: null,
+      updatedAt: new Date().toISOString(),
+    });
+  }
+}
+
+function watchCodexStatus() {
+  fs.mkdirSync(path.dirname(CODEX_STATUS_FILE), { recursive: true });
+  statusWatcher = fs.watch(path.dirname(CODEX_STATUS_FILE), (_event, filename) => {
+    if (filename && filename !== path.basename(CODEX_STATUS_FILE)) return;
+    clearTimeout(statusReloadTimer);
+    statusReloadTimer = setTimeout(publishCodexStatus, 60);
+  });
+  publishCodexStatus();
 }
 
 function getDefaultBounds() {
@@ -76,6 +109,7 @@ function createWindow() {
   win.setIgnoreMouseEvents(true, { forward: true });
   win.loadFile(DEMO_HTML);
   win.webContents.on('did-finish-load', () => {
+    publishCodexStatus();
     win.webContents.executeJavaScript(`
       document.documentElement.classList.add('desktop-app');
       document.body.classList.add('desktop-app');
@@ -134,7 +168,7 @@ function buildTray() {
 
 function sendMood(mood) {
   writeState({ mood });
-  if (win) win.webContents.send('codex:status', { type: 'mood', mood });
+  if (win) win.webContents.send('pet:state', { type: 'mood', mood });
 }
 
 function dockWindow(edge = 'right-bottom') {
@@ -190,6 +224,13 @@ ipcMain.handle('pet:set-mouse-through', (_event, enabled) => {
   return true;
 });
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+  watchCodexStatus();
+});
 app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
+app.on('before-quit', () => {
+  clearTimeout(statusReloadTimer);
+  statusWatcher?.close();
+});
 app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });

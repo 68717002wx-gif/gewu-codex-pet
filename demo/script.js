@@ -292,6 +292,29 @@ menu.addEventListener('click', (e) => {
   if (!dragging) setMouseThrough(true);
 });
 
+windowApi.onCliStatus?.((status) => {
+  const stateMap = {
+    idle: 'front-main',
+    thinking: 'expr-thinking',
+    running: 'front-45-right',
+    success: 'expr-cheer',
+    error: 'front-45-left',
+  };
+  const fallbackMessage = {
+    idle: 'Codex 已就绪。',
+    thinking: 'Codex 正在思考……',
+    running: 'Codex 正在执行任务。',
+    success: 'Codex 已完成任务！',
+    error: 'Codex 遇到了问题。',
+  };
+  const mappedState = stateMap[status?.state];
+  if (!mappedState) return;
+  setState(mappedState, false);
+  say(status.message || fallbackMessage[status.state], status.state === 'error' ? 4200 : 3000);
+  if (status.state === 'success') playSound('success');
+  if (status.state === 'error') playSound('fail');
+});
+
 setInterval(() => {
   if (dragging || document.hidden) return;
   if (currentState === 'expr-thinking') { playSound('soft'); return; }

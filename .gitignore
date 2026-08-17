@@ -5,3 +5,4 @@ dist/
 build/
 .gewuye-state.json
 qa/artifacts/
+app/runtime/

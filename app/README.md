@@ -23,4 +23,25 @@ npm install
 npm start
 ```
 
-> 后续如果你希望我继续封装，我会先确认安装依赖，再执行。
+## Codex/CLI 状态协议（v1）
+
+桌宠监听 `app/runtime/codex-status.json`，支持五种标准状态：
+
+- `idle`：空闲/就绪
+- `thinking`：分析或规划中
+- `running`：正在执行
+- `success`：执行成功
+- `error`：执行失败
+
+在 `app` 目录运行以下命令即可更新桌宠：
+
+```bash
+npm run status -- thinking --message "正在分析代码" --task-id task-1
+npm run status -- running --message "正在运行测试" --progress 50
+npm run status -- success --message "任务已完成"
+npm run status -- error --message "测试失败"
+```
+
+可通过 `--source` 标记事件来源，通过 `--file` 或环境变量 `GEWU_PET_STATUS_FILE` 指定状态文件。写入采用临时文件替换，避免桌宠读到不完整 JSON。
+
+第一版提供通用状态入口，尚未自动绑定某一个 Codex/CLI 命令的生命周期。
