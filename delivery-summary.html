@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>格物页桌面宠物｜交付总览</title>
+  <style>
+    :root{
+      --forest:#143f32;
+      --forest-2:#1f5b49;
+      --cream:#f7efd9;
+      --paper:#fff9ea;
+      --ink:#18342c;
+      --muted:#6b7a70;
+      --line:rgba(20,63,50,.18);
+      --ok:#2e7d5b;
+      --warn:#a46a1f;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(135deg,var(--cream),#fdf8e9 42%,#e8f0e7);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.65}
+    .wrap{max-width:1120px;margin:0 auto;padding:44px 28px 56px}
+    .hero{border:1px solid var(--line);border-radius:32px;background:rgba(255,249,234,.86);box-shadow:0 22px 70px rgba(20,63,50,.12);padding:34px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(31,91,73,.22),transparent 68%)}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fffaf0;color:var(--forest);font-weight:700;font-size:13px}
+    h1{font-size:42px;line-height:1.12;margin:18px 0 12px;color:var(--forest);letter-spacing:-.03em}
+    .lead{font-size:18px;color:#38554b;max-width:780px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+    .card{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:24px;padding:20px;min-height:150px}
+    .card h2{margin:0 0 8px;font-size:18px;color:var(--forest)}
+    .card p{margin:0;color:#4d675e;font-size:14px}
+    .status{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .pill{border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;background:#edf6ef;color:var(--ok);border:1px solid rgba(46,125,91,.2)}
+    .pill.warn{background:#fff4df;color:var(--warn);border-color:rgba(164,106,31,.22)}
+    section{margin-top:26px;border:1px solid var(--line);border-radius:28px;background:rgba(255,249,234,.72);padding:26px}
+    h2{margin:0 0 14px;color:var(--forest);font-size:24px}
+    ul{margin:10px 0 0;padding-left:20px}
+    li{margin:6px 0}
+    code{background:#eef4ec;border:1px solid var(--line);padding:2px 6px;border-radius:7px;color:#143f32}
+    .files{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .file{border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.54);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#24483d}
+    .note{margin-top:14px;padding:14px 16px;border-radius:18px;background:#fff4df;color:#72511f;border:1px solid rgba(164,106,31,.2)}
+    @media(max-width:860px){.grid,.files{grid-template-columns:1fr}h1{font-size:32px}.wrap{padding:26px 16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="hero">
+      <span class="eyebrow">gewu-codex-pet · 工作陪伴型桌面宠物</span>
+      <h1>格物页桌面宠物交付总览</h1>
+      <p class="lead">本页是本轮新增的独立 HTML 交付产物，用于汇总当前 Demo、视觉资产、Electron 透明窗口框架、状态系统和后续确认点。现有 <code>demo/index.html</code> 未被重写。</p>
+      <div class="status">
+        <span class="pill">outline 校验通过</span>
+        <span class="pill">Demo 脚本已补齐</span>
+        <span class="pill">Electron 框架已补齐</span>
+        <span class="pill warn">依赖安装待确认</span>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card"><h2>角色方向</h2><p>深森林绿 + 米白，3D 潮玩角色设定稿风，定位为话痨、调皮、鼓励型、专业的工作陪伴宠物。</p></article>
+      <article class="card"><h2>Demo 能力</h2><p>支持拖动、点击、hover 抬头、贴边、右键菜单、状态切换、定时说话、轻量音效与本地状态记忆。</p></article>
+      <article class="card"><h2>桌面窗口</h2><p>Electron 框架预留透明无边框、置顶、托盘、隐藏/唤出、状态持久化与 Codex/CLI 状态接入。</p></article>
+    </div>
+
+    <section>
+      <h2>已完成文件</h2>
+      <div class="files">
+        <div class="file">demo/index.html</div>
+        <div class="file">demo/styles.css</div>
+        <div class="file">demo/script.js</div>
+        <div class="file">app/main.js</div>
+        <div class="file">app/preload.js</div>
+        <div class="file">app/package.json</div>
+        <div class="file">docs/product-spec.md</div>
+        <div class="file">docs/interaction-map.md</div>
+        <div class="file">docs/delivery-notes.md</div>
+        <div class="file">assets/asset-manifest.json</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>动作与状态覆盖</h2>
+      <ul>
+        <li>基础动作：待机呼吸、眨眼、左右晃动、睡觉、hover 抬头、点击开心、拖动挣扎/摇晃。</li>
+        <li>情绪动作：开心、困惑、生气、委屈、得意、紧张、专注、睡着、摸鱼。</li>
+        <li>系统能力：可拖动、可点击、右键菜单、透明窗口、置顶、隐藏/唤出、贴边、看向鼠标、定时说话、状态切换。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>验证记录</h2>
+      <ul>
+        <li><code>output/outline.json</code> 已使用指定 <code>validate_outline.js</code> 校验通过。</li>
+        <li><code>demo/script.js</code>、<code>app/main.js</code>、<code>app/preload.js</code> 已通过 Node 语法检查。</li>
+        <li><code>app/package.json</code>、<code>app/state.example.json</code>、<code>assets/asset-manifest.json</code> 已通过 JSON 解析检查。</li>
+        <li>项目文本文件已扫描，未发现历史省略占位符污染。</li>
+      </ul>
+      <div class="note">下一步如需运行真桌面透明窗口，需要确认是否允许安装 Electron 依赖；这一步涉及安装软件/依赖，我会先单独征得确认。</div>
+    </section>
+  </main>
+</body>
+</html>

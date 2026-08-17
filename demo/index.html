@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>格物页桌面宠物 Demo</title>
+<meta name="delivery-checkpoint" content="html-css-pet-preview-current"/>
+<link href="styles.css" rel="stylesheet"/>
+<script>(function(){var p=new URLSearchParams(location.search);var isExport=p.get('mode')==='export'||p.get('export')==='1'||p.has('export');if(!isExport){document.documentElement.classList.add('qa-editor-mode');document.body&&document.body.classList.add('qa-editor-mode');}})();</script></head>
+<body><script>document.body.classList.add('desktop-mode');</script><div id="deck-root"><section class="slide is-current-slide" data-slide="01">
+<main class="stage">
+<section aria-label="状态控制台" class="toolbar">
+<div>
+<strong>格物页单体桌宠 Demo</strong>
+<span>正式独立桌宠主体：不使用截图裁切或 legacy-disabled 套壳</span>
+</div>
+<div class="buttons">
+<button data-state="front-main">正面</button>
+<button data-state="side-main">侧身</button>
+<button data-state="back-main">背面</button>
+<button data-state="front-45-left">拖拽左</button>
+<button data-state="front-45-right">拖拽右</button>
+<button data-state="expr-happy">开心</button>
+<button data-state="expr-thinking">思考</button>
+<button data-state="expr-cheer">欢呼</button>
+</div>
+</section>
+<article aria-label="格物页桌面宠物" class="pet formal-state-front-main" data-asset-source="formal-generated" id="pet" tabindex="0">
+<div class="bubble" id="bubble">正式桌宠主体已就位。</div>
+<div aria-hidden="true" class="pet-body">
+<img alt="" class="pet-image formal-pet-image" draggable="false" id="petImage" src="../assets/generated/formal-pet-main.png"/>
+<span class="shadow"></span>
+</div>
+</article>
+<nav aria-label="右键菜单" class="context-menu" id="contextMenu">
+<button data-menu="front-main">正面单体</button>
+<button data-menu="side-main">侧身单体</button>
+<button data-menu="back-main">背面单体</button>
+<button data-menu="expr-thinking">思考状态</button>
+<button data-menu="small">缩小</button>
+<button data-menu="large">放大</button>
+<button data-menu="hide">隐藏 3 秒</button>
+</nav>
+</main>
+
+</section></div><script src="script.js"></script><script>const __qaParams = new URLSearchParams(location.search); if (__qaParams.get('mode') === 'export' || __qaParams.get('export') === '1' || __qaParams.has('export')) document.body.classList.add('export-mode');</script><script>window.__deckRuntime = window.__deckRuntime || { mode: 'qa-compat', ready: true };</script></body>
+</html>

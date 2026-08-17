@@ -1,0 +1,19 @@
+{
+  "name": "gewu-codex-pet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "格物页桌面宠物：透明置顶窗口、状态系统、右键菜单和 Codex/CLI 状态预留接口。",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check main.js && node --check preload.js && node --check window-position.js && node --check ../qa/interaction_check.js && node ../qa/window_position_check.js",
+    "test:interaction": "NODE_PATH=./node_modules node ../qa/interaction_check.js",
+    "test": "npm run check && npm run test:interaction"
+  },
+  "dependencies": {
+    "electron": "^31.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.2"
+  }
+}

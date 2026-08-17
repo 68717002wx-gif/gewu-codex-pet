@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "issues": [],
+  "editor": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "bodyOverflowX": "hidden",
+    "thumbnailsVisible": false,
+    "editorScale": 1,
+    "primary": "",
+    "inverse": "",
+    "firstSlide": {
+      "left": 0,
+      "right": 1440,
+      "top": 0,
+      "bottom": 810,
+      "width": 1440,
+      "height": 810
+    },
+    "toolbarTop": null,
+    "toolbar": null,
+    "statement": null,
+    "diagram": null,
+    "diagrams": [],
+    "toolbarMenus": {
+      "design": {
+        "available": false,
+        "open": false,
+        "expanded": false
+      },
+      "page": {
+        "available": false,
+        "open": false,
+        "expanded": false
+      }
+    }
+  },
+  "export": {
+    "cssWidth": 1920,
+    "cssHeight": 1080,
+    "renderedWidth": 1920,
+    "renderedHeight": 1080
+  }
+}

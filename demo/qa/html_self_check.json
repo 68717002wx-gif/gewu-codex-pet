@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "slideCount": 1,
+  "diagramCount": 0,
+  "diagramSpecs": [],
+  "issues": [],
+  "warnings": [
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01 button: short background text uses vertical padding to simulate centering; dom-to-pptx may shift or clip it. Use a fixed width/height outer background container with display:flex; align-items:center; justify-content:center, and an inner text element with margin:0; padding:0; line-height:1.",
+    "slide-01: 1 text element(s) have less than 12px PowerPoint wrap slack (worst right=12px, bottom=9px; examples: button). Leave 16-24px extra room or reduce font size before editable PPTX export."
+  ]
+}
