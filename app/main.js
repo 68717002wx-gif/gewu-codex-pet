@@ -1,6 +1,7 @@
 const { app, BrowserWindow, Menu, Tray, ipcMain, screen, nativeImage } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const { clampWindowMove } = require('./window-position');
 
 const ROOT = path.resolve(__dirname, '..');
 const DEMO_HTML = path.join(ROOT, 'demo', 'index.html');
@@ -175,6 +176,14 @@ ipcMain.handle('pet:set-state', (_event, patch) => writeState(patch || {}));
 ipcMain.handle('pet:hide-window', () => hideWindow());
 ipcMain.handle('pet:show-window', () => showWindow());
 ipcMain.handle('pet:dock', (_event, edge) => dockWindow(edge));
+ipcMain.handle('pet:move-window', (_event, { dx = 0, dy = 0 } = {}) => {
+  if (!win) return false;
+  const bounds = win.getBounds();
+  const workArea = screen.getDisplayMatching(bounds).workArea;
+  const next = clampWindowMove(bounds, workArea, dx, dy);
+  win.setPosition(next.x, next.y, false);
+  return true;
+});
 ipcMain.handle('pet:set-mouse-through', (_event, enabled) => {
   if (!win) return false;
   win.setIgnoreMouseEvents(Boolean(enabled), { forward: true });

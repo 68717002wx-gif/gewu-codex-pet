@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "check": "node --check main.js && node --check preload.js && node --check ../qa/interaction_check.js",
+    "check": "node --check main.js && node --check preload.js && node --check window-position.js && node --check ../qa/interaction_check.js && node ../qa/window_position_check.js",
     "test:interaction": "NODE_PATH=./node_modules node ../qa/interaction_check.js",
     "test": "npm run check && npm run test:interaction"
   },

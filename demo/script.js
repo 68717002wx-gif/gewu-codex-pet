@@ -193,6 +193,8 @@ pet.addEventListener('pointerdown', (e) => {
     id: e.pointerId,
     x: e.clientX,
     y: e.clientY,
+    screenX: e.screenX,
+    screenY: e.screenY,
     left: rect.left,
     top: rect.top,
     offsetX: e.clientX - rect.left,
@@ -210,6 +212,14 @@ pet.addEventListener('pointermove', (e) => {
     pet.classList.add('dragging');
     setState('front-45-left', false);
     say('欸欸欸，轻一点拖我～', 1600);
+  }
+  if (isDesktopApp) {
+    const dx = e.screenX - pointerStart.screenX;
+    const dy = e.screenY - pointerStart.screenY;
+    pointerStart.screenX = e.screenX;
+    pointerStart.screenY = e.screenY;
+    windowApi.moveWindow?.(dx, dy);
+    return;
   }
   pet.style.left = `${e.clientX - pointerStart.offsetX}px`;
   pet.style.top = `${e.clientY - pointerStart.offsetY}px`;
